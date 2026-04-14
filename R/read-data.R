@@ -143,7 +143,7 @@ read_art_number <- function(file, all_columns = FALSE) {
 #' @rdname read_population
 #'
 #' @examples
-#' anc_path <- system.file("extdata/demo_anc_testing.csv", package = "naomi")
+#' anc_path <- system.file("extdata/demo_anc_testing.csv", package = "naomi.zaf")
 #' anc_testing <- read_anc_testing(anc_path)
 #' @export
 read_anc_testing <- function(file) {

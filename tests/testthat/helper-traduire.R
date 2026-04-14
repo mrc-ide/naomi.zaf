@@ -1,7 +1,7 @@
 naomi_set_language <- function(language) {
-  traduire::translator_set_language(language, package = "naomi")
+  traduire::translator_set_language(language, package = "naomi.zaf")
 }
 
 naomi_translator <- function() {
-  traduire::translator(package = "naomi")
+  traduire::translator(package = "naomi.zaf")
 }

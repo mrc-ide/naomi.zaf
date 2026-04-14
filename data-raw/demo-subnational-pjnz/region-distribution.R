@@ -2,11 +2,11 @@ library(naomi)
 library(tidyverse)
 library(sf)
 
-area_merged <- read_sf(system.file("extdata/demo_areas.geojson", package = "naomi"))
+area_merged <- read_sf(system.file("extdata/demo_areas.geojson", package = "naomi.zaf"))
 
-pop_agesex <- read_csv(system.file("extdata/demo_population_agesex.csv", package = "naomi"))
-art_number <- read_csv(system.file("extdata/demo_art_number.csv", package = "naomi"))
-anc_testing <- read_csv(system.file("extdata/demo_anc_testing.csv", package = "naomi"))
+pop_agesex <- read_csv(system.file("extdata/demo_population_agesex.csv", package = "naomi.zaf"))
+art_number <- read_csv(system.file("extdata/demo_art_number.csv", package = "naomi.zaf"))
+anc_testing <- read_csv(system.file("extdata/demo_anc_testing.csv", package = "naomi.zaf"))
 
 
 areas_wide <- spread_areas(area_merged)

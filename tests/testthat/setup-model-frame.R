@@ -1,6 +1,6 @@
 
-a_area_merged <- sf::read_sf(system.file("extdata/demo_areas.geojson", package = "naomi"))
-a_spec <- extract_pjnz_naomi(system.file("extdata/demo_mwi2019.PJNZ", package = "naomi"))
+a_area_merged <- sf::read_sf(system.file("extdata/demo_areas.geojson", package = "naomi.zaf"))
+a_spec <- extract_pjnz_naomi(system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf"))
 
 
 a_naomi_mf <- naomi_model_frame(a_area_merged,

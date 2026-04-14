@@ -1,4 +1,4 @@
 ## usethis namespace: start
-#' @useDynLib naomi, .registration = TRUE
+#' @useDynLib naomi.zaf, .registration = TRUE
 ## usethis namespace: end
 NULL

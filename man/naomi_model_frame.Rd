@@ -15,6 +15,7 @@ naomi_model_frame(
   calendar_quarter3,
   calendar_quarter4 = "CY2024Q3",
   calendar_quarter5 = "CY2025Q3",
+  calendar_quarter6 = "CY2026Q3",
   age_groups = get_five_year_age_groups(),
   sexes = c("male", "female"),
   omega = 0.7,
@@ -33,7 +34,10 @@ naomi_model_frame(
   spectrum_population_calibration = "national",
   output_aware_plhiv = TRUE,
   adjust_area_growth = FALSE,
-  psnu_level = NULL
+  psnu_level = NULL,
+  recent_immigrant_params = NULL,
+  foreign_art_eta2 = 16.7,
+  foreign_art_R = 0.583
 )
 }
 \arguments{
@@ -57,6 +61,8 @@ ids.}
 \item{calendar_quarter4}{Calendar quarter at time 4 ("CYyyyyQq")}
 
 \item{calendar_quarter5}{Calendar quarter at time 5 ("CYyyyyQq")}
+
+\item{calendar_quarter6}{Calendar quarter at time 5 ("CYyyyyQq")}
 
 \item{age_groups}{Age groups to include in model frame}
 

@@ -16,7 +16,7 @@ Spectrum projection name as character string.
 Read Spectrum Projection Name from Spectrum PJNZ
 }
 \examples{
-pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 read_spectrum_projection_name(pjnz)
 
 }

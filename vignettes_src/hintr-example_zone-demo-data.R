@@ -30,12 +30,12 @@ library(naomi)
 
 ##+ fit model
 hintr_data <- list(
-  pjnz = system.file("extdata/demo-subnational-pjnz/demo_mwi2024_region-pjnz.zip", package = "naomi"),
-  population = system.file("extdata/demo-subnational-pjnz/demo_population_zone.csv", package = "naomi"),
-  shape = system.file("extdata/demo-subnational-pjnz/demo_areas_region-pjnz.geojson", package = "naomi"),
-  survey = system.file("extdata/demo_survey_hiv_indicators.csv", package = "naomi"),
-  art_number = system.file("extdata/demo-subnational-pjnz/demo_art_number_zone.csv", package = "naomi"),
-  anc_testing = system.file("extdata/demo-subnational-pjnz/demo_anc_testing_zone.csv", package = "naomi")
+  pjnz = system.file("extdata/demo-subnational-pjnz/demo_mwi2024_region-pjnz.zip", package = "naomi.zaf"),
+  population = system.file("extdata/demo-subnational-pjnz/demo_population_zone.csv", package = "naomi.zaf"),
+  shape = system.file("extdata/demo-subnational-pjnz/demo_areas_region-pjnz.geojson", package = "naomi.zaf"),
+  survey = system.file("extdata/demo_survey_hiv_indicators.csv", package = "naomi.zaf"),
+  art_number = system.file("extdata/demo-subnational-pjnz/demo_art_number_zone.csv", package = "naomi.zaf"),
+  anc_testing = system.file("extdata/demo-subnational-pjnz/demo_anc_testing_zone.csv", package = "naomi.zaf")
 )
 
 hintr_options <- list(

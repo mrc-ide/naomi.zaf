@@ -20,7 +20,7 @@ Read Subnational Region Name from Spectrum PJNZ
 Value NA corresponds to region code 0 for a national Spectrum file.
 }
 \examples{
-pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 read_spectrum_region_name(pjnz)
 
 }

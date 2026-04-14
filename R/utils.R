@@ -21,7 +21,7 @@ csv_reader <- function(file, readr = FALSE) {
 }
 
 system_file <- function(...) {
-  system.file(..., package = "naomi", mustWork = TRUE)
+  system.file(..., package = "naomi.zaf", mustWork = TRUE)
 }
 
 write_csv_string <- function(x, ..., row.names = FALSE) {

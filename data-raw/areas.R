@@ -161,18 +161,18 @@ usethis::use_data(
 
 library(tableschema.r)
 
-schema_area_meta <- system.file("extdata/areas/area_meta.csv", package = "naomi") %>%
+schema_area_meta <- system.file("extdata/areas/area_meta.csv", package = "naomi.zaf") %>%
   tableschema.r::infer()
 
-schema_area_hierarchy <- system.file("extdata/areas/area_hierarchy.csv", package = "naomi") %>%
+schema_area_hierarchy <- system.file("extdata/areas/area_hierarchy.csv", package = "naomi.zaf") %>%
   tableschema.r::infer() %>%
   jsonlite::toJSON(pretty = TRUE)
 
-schema_area_names <- system.file("extdata/areas/area_names.csv", package = "naomi") %>%
+schema_area_names <- system.file("extdata/areas/area_names.csv", package = "naomi.zaf") %>%
   tableschema.r::infer() %>%
   jsonlite::toJSON(pretty = TRUE)
 
-schema_area_names <- system.file("extdata/areas/area_hierarchy.csv", package = "naomi") %>%
+schema_area_names <- system.file("extdata/areas/area_hierarchy.csv", package = "naomi.zaf") %>%
   tableschema.::infer() %>%
   jsonlite::toJSON(pretty = TRUE)
 

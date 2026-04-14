@@ -9,21 +9,29 @@ select_naomi_data(
   survey_hiv_indicators,
   anc_testing,
   art_number,
-  prev_survey_ids,
-  artcov_survey_ids,
-  recent_survey_ids,
-  vls_survey_ids = NULL,
+  prev_survey_ids_t1,
+  artcov_survey_ids_t1,
+  recent_survey_ids_t1,
+  vls_survey_ids_t1 = NULL,
+  prev_survey_ids_t2 = NULL,
+  artcov_survey_ids_t2 = NULL,
+  recent_survey_ids_t2 = NULL,
+  vls_survey_ids_t2 = NULL,
   artnum_calendar_quarter_t1 = naomi_mf[["calendar_quarter1"]],
   artnum_calendar_quarter_t2 = naomi_mf[["calendar_quarter2"]],
-  anc_clients_year_t2 =
-    year_labels(calendar_quarter_to_quarter_id(naomi_mf[["calendar_quarter2"]])),
-  anc_clients_year_t2_num_months = 12,
+  artnum_calendar_quarter_t3 = NULL,
+  anc_clients_year_t3 =
+    year_labels(calendar_quarter_to_quarter_id(naomi_mf[["calendar_quarter3"]])),
+  anc_clients_year_t3_num_months = 12,
   anc_prev_year_t1 =
     year_labels(calendar_quarter_to_quarter_id(naomi_mf[["calendar_quarter1"]])),
   anc_prev_year_t2 =
     year_labels(calendar_quarter_to_quarter_id(naomi_mf[["calendar_quarter2"]])),
+  anc_prev_year_t3 =
+    year_labels(calendar_quarter_to_quarter_id(naomi_mf[["calendar_quarter3"]])),
   anc_artcov_year_t1 = anc_prev_year_t1,
   anc_artcov_year_t2 = anc_prev_year_t2,
+  anc_artcov_year_t3 = anc_prev_year_t3,
   use_kish_prev = TRUE,
   deff_prev = 1,
   use_kish_artcov = TRUE,
@@ -45,27 +53,39 @@ select_naomi_data(
 
 \item{art_number}{Data frame of number currently receiving ART, or NULL to exclude any ART data.}
 
-\item{prev_survey_ids}{A character vector of \code{survey_id}s for prevalence data.}
+\item{prev_survey_ids_t1}{A character vector of \code{survey_id}s for prevalence data at T1.}
 
-\item{artcov_survey_ids}{A character vector of \code{survey_id}s for ART coverage data.}
+\item{artcov_survey_ids_t1}{A character vector of \code{survey_id}s for ART coverage data at T1.}
 
-\item{recent_survey_ids}{A character vector of \code{survey_id}s for recent HIV infection status.}
+\item{recent_survey_ids_t1}{A character vector of \code{survey_id}s for recent HIV infection status at T1.}
 
-\item{vls_survey_ids}{A character vector of \code{survey_id}s for survey VLS among all HIV+ persons.}
+\item{vls_survey_ids_t1}{A character vector of \code{survey_id}s for survey VLS among all HIV+ personsat T1.}
+
+\item{prev_survey_ids_t2}{A character vector of \code{survey_id}s for prevalence data at T2.}
+
+\item{artcov_survey_ids_t2}{A character vector of \code{survey_id}s for ART coverage data at T2.}
+
+\item{recent_survey_ids_t2}{A character vector of \code{survey_id}s for recent HIV infection status at T2.}
+
+\item{vls_survey_ids_t2}{A character vector of \code{survey_id}s for survey VLS among all HIV+ personsat T2.}
 
 \item{artnum_calendar_quarter_t1}{Calendar quarter for first time point for number on ART.}
 
 \item{artnum_calendar_quarter_t2}{Calendar quarter for second time point for number on ART.}
 
-\item{anc_clients_year_t2}{Calendar year (possibly multiple) for number of ANC clients at year 2.}
+\item{anc_clients_year_t3}{Calendar year (possibly multiple) for number of ANC clients at year 3.}
 
 \item{anc_prev_year_t1}{Calendar year (possibly multiple) for first time point for ANC prevalence.}
 
 \item{anc_prev_year_t2}{Calendar year (possibly multiple) for second time point for ANC prevalence.}
 
+\item{anc_prev_year_t3}{Calendar year (possibly multiple) for third time point for ANC prevalence.#'}
+
 \item{anc_artcov_year_t1}{Calendar year (possibly multiple) for first time point for ANC ART coverage.}
 
 \item{anc_artcov_year_t2}{Calendar year (possibly multiple) for second time point for ANC ART coverage.}
+
+\item{anc_artcov_year_t3}{Calendar year (possibly multiple) for third time point for ANC ART coverage.#'}
 
 \item{deff_prev}{Approximate design effect for survey prevalence.}
 
@@ -77,7 +97,7 @@ select_naomi_data(
 
 \item{spec_program_data}{Object of class \code{"spec_program_data"} consisting of aggregated program data inputs to Spectrum. Provided for checking against Naomi inputs. If \code{NULL} then checks are not conducted.}
 
-\item{anc_clients_year_t2_num_monhts}{Number of months of reporting reflected in the year(s) recorded in \code{anc_clients_year_t2}.}
+\item{anc_clients_year_t3_num_monhts}{Number of months of reporting reflected in the year(s) recorded in \code{anc_clients_year_t3}.}
 }
 \description{
 Select data for model fitting

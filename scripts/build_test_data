@@ -8,14 +8,14 @@ if (file.exists("tests/testthat/testdata/fit.RDS")) {
 }
 
 data <- list(
-  pjnz = system.file("extdata/demo_mwi2019.PJNZ", package = "naomi"),
+  pjnz = system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf"),
   population = system.file("extdata/demo_population_agesex.csv",
-    package = "naomi"),
+    package = "naomi.zaf"),
   shape = file.path("tests/testthat/testdata/malawi.geojson"),
   survey = system.file("extdata/survey/survey_hiv_indicators.csv",
-    package = "naomi"),
-  art = system.file("extdata/demo_art_number.csv", package = "naomi"),
-  anc = system.file("extdata/demo_anc_testing.csv", package = "naomi")
+    package = "naomi.zaf"),
+  art = system.file("extdata/demo_art_number.csv", package = "naomi.zaf"),
+  anc = system.file("extdata/demo_anc_testing.csv", package = "naomi.zaf")
 )
 options <- list(
   area_scope = "MWI",

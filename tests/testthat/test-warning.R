@@ -125,9 +125,9 @@ test_that("warning raised if outputs exceed threshold", {
 test_that("ART warning raised if spectrum totals do not match naomi data", {
 
   data <- list(
-    pjnz = system.file("extdata/demo_mwi2019.PJNZ", package = "naomi"),
-    shape = system.file("extdata/demo_areas.geojson", package = "naomi"),
-    art_number = system.file("extdata/demo_art_number.csv", package = "naomi")
+    pjnz = system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf"),
+    shape = system.file("extdata/demo_areas.geojson", package = "naomi.zaf"),
+    art_number = system.file("extdata/demo_art_number.csv", package = "naomi.zaf")
   )
 
   # National warnings for national pjnz file
@@ -146,9 +146,9 @@ test_that("ART warning raised if spectrum totals do not match naomi data", {
 test_that("ANC warning raised if spectrum totals do not match naomi data", {
 
   data <- list(
-    pjnz = system.file("extdata/demo_mwi2019.PJNZ", package = "naomi"),
-    shape = system.file("extdata/demo_areas.geojson", package = "naomi"),
-    anc_testing = system.file("extdata/demo_anc_testing.csv", package = "naomi")
+    pjnz = system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf"),
+    shape = system.file("extdata/demo_areas.geojson", package = "naomi.zaf"),
+    anc_testing = system.file("extdata/demo_anc_testing.csv", package = "naomi.zaf")
   )
 
   # National warnings for national pjnz file

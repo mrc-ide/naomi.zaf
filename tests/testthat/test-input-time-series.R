@@ -161,8 +161,8 @@ test_that("ART data can be aggregated when avalible at different admin levels", 
   # (4) Test that ART data can be aggregated with missing records
   # Expected behavior - retain NAs at lowest admin levels, aggregate with
   # missing data at higher admin levels
-  art <- system.file("extdata/demo_art_number.csv", package = "naomi")
-  shape <- system.file("extdata/demo_areas.geojson", package = "naomi")
+  art <- system.file("extdata/demo_art_number.csv", package = "naomi.zaf")
+  shape <- system.file("extdata/demo_areas.geojson", package = "naomi.zaf")
 
   art_agg4 <- aggregate_art(art, shape)
   missing <- dplyr::filter(art_agg4, is.na(art_current))
@@ -431,8 +431,8 @@ test_that("ANC data can be aggregated when avalible at different admin levels", 
   # (4) Test that ANC data can be aggregated with missing records
   # Expected behavior - retain NAs at lowest admin levels, aggregate with
   # missing data at higher admin levels
-  anc <- system.file("extdata/demo_anc_testing.csv", package = "naomi")
-  shape <- system.file("extdata/demo_areas.geojson", package = "naomi")
+  anc <- system.file("extdata/demo_anc_testing.csv", package = "naomi.zaf")
+  shape <- system.file("extdata/demo_areas.geojson", package = "naomi.zaf")
 
   test_data4 <- read_anc_testing(anc) %>%
     dplyr::filter(!(area_id == "MWI_4_7_demo" & year == "2012"))
@@ -718,8 +718,8 @@ test_that("there is metadata for every indicator", {
 test_that("missing data is tagged correctly in aggregated plot data", {
 
   # Missing ART data
-  art <- system.file("extdata/demo_art_number.csv", package = "naomi")
-  shape <- system.file("extdata/demo_areas.geojson", package = "naomi")
+  art <- system.file("extdata/demo_art_number.csv", package = "naomi.zaf")
+  shape <- system.file("extdata/demo_areas.geojson", package = "naomi.zaf")
 
   art_plot <- prepare_input_time_series_art(art, shape)
 
@@ -756,8 +756,8 @@ test_that("missing data is tagged correctly in aggregated plot data", {
   # * All data missing for  Likoma for 2012 in test data
   # * Facility births missing for all districts
 
-  anc <- system.file("extdata/demo_anc_testing.csv", package = "naomi")
-  shape <- system.file("extdata/demo_areas.geojson", package = "naomi")
+  anc <- system.file("extdata/demo_anc_testing.csv", package = "naomi.zaf")
+  shape <- system.file("extdata/demo_areas.geojson", package = "naomi.zaf")
 
   test_data <- read_anc_testing(anc) %>%
     dplyr::filter(!(area_id == "MWI_4_7_demo" & year == "2012")) %>%

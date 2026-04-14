@@ -1,19 +1,19 @@
-Package: naomi
-Title: Naomi Model for Subnational HIV Estimates
-Version: 2.11.1
+Package: naomi.zaf
+Title: Naomi Model for Subnational HIV Estimates -- South Africa District Estimates version
+Version: 2.11.1.999710
 Authors@R:
     person(given = "Jeff",
            family = "Eaton",
            role = c("aut", "cre"),
            email = "jeffrey.eaton@imperial.ac.uk",
            comment = c(ORCID = "0000-0001-7728-728X"))
-Description: This package implements the Naomi model for subnational HIV estimates.
+Description: This package implements the Naomi model for subnational HIV estimates. This package is a customised version with additional features for the South Africa district HIV estimates. The version number is suffixed with X.X.X.999710, with 710 reflecting the ISO-3 numeric country code for South Africa.
 Depends: R (>= 3.5.0)
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Roxygen: list(markdown = TRUE)
-RoxygenNote: 7.3.1
+RoxygenNote: 7.3.2
 Additional_repositories:
     https://mrc-ide.r-universe.dev,
     https://duckdb.r-universe.dev

@@ -23,7 +23,7 @@
 #'
 #' @examples
 #'
-#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 #' shiny90dir <- tempfile()
 #' utils::unzip(pjnz, "malawi.zip.shiny90", exdir = shiny90dir)
 #' shiny90_path <- file.path(shiny90dir, "malawi.zip.shiny90")

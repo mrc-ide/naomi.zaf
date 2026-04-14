@@ -62,7 +62,7 @@ write_navigator_checklist <- function(naomi_output,
   v$TrueFalse[v$NaomiCheckPermPrimKey %in% always_true_checks] <- TRUE
 
   ## Check for correct model options selection
-  valid_opt <- yaml::read_yaml(system.file("metadata/navigator_validation.yml", package = "naomi"))
+  valid_opt <- yaml::read_yaml(system.file("metadata/navigator_validation.yml", package = "naomi.zaf"))
 
   model_options <- naomi_output$fit$model_options
   data_options <- naomi_output$fit$data_options

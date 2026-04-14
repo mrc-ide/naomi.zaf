@@ -18,7 +18,7 @@
 NULL
 
 naomi_init_traduire <- function() {
-  root <- system.file("traduire", package = "naomi", mustWork = TRUE)
+  root <- system.file("traduire", package = "naomi.zaf", mustWork = TRUE)
   pattern <- sprintf("%s/{language}-{namespace}.json", root)
   languages <- c("en", "fr", "pt")
   namespaces <- "translation"
@@ -32,7 +32,7 @@ naomi_init_traduire <- function() {
 }
 
 t_ <- function(...) {
-  traduire::t_(..., package = "naomi")
+  traduire::t_(..., package = "naomi.zaf")
 }
 
 ## This mess is to avoid R CMD check NOTEs about "no visible binding for

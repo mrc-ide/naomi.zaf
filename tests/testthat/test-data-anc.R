@@ -1,6 +1,6 @@
 test_that("can calculate prevalence and ART coverage from ANC data", {
   path <- system.file("extdata", "demo_anc_testing.csv",
-                      package = "naomi")
+                      package = "naomi.zaf")
   anc_data <- utils::read.csv(path, stringsAsFactors = FALSE)
   out <- calculate_prevalence_art_coverage(anc_data)
   expect_equal(colnames(out),

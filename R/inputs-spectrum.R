@@ -10,7 +10,7 @@
 #' silently not return values, even if `extract_shiny90 = TRUE`.
 #'
 #' @examples
-#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 #' spec <- extract_pjnz_naomi(pjnz)
 #'
 #' @export
@@ -121,7 +121,7 @@ extract_pjnz_one <- function(pjnz, extract_shiny90) {
 #'   number on ART, respectively.
 #'
 #' @examples
-#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 #' spec <- extract_pjnz_program_data(pjnz)
 #'
 #' @export
@@ -158,7 +158,7 @@ extract_pjnz_program_data <- function(pjnz_list) {
 #' @param dp dp data from PJNZ file
 #'
 #' @examples
-#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 #' dp <- read_dp(pjnz)
 #' read_dp_art_dec31(dp)
 #'
@@ -421,7 +421,7 @@ add_dec31_art <- function(spec, pjnz) {
 #' @param pjnz path to PJNZ file
 #'
 #' @examples
-#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 #' read_dp_anc_testing(pjnz)
 #'
 #' @noRd
@@ -531,7 +531,7 @@ add_shiny90_unaware <- function(spec, pjnz, extract_shiny90) {
 #' The region code is 0 if a national Spectrum file.
 #'
 #' @examples
-#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 #' read_spectrum_region_code(pjnz)
 #'
 #' @export
@@ -552,7 +552,7 @@ read_spectrum_region_code <- function(pjnz) {
 #' Value NA corresponds to region code 0 for a national Spectrum file.
 #'
 #' @examples
-#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 #' read_spectrum_region_name(pjnz)
 #'
 #' @export
@@ -573,7 +573,7 @@ read_spectrum_region_name <- function(pjnz) {
 #' @return Spectrum projection name as character string.
 #'
 #' @examples
-#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+#' pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 #' read_spectrum_projection_name(pjnz)
 #'
 #' @export

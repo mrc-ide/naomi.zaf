@@ -19,7 +19,7 @@ If the .shiny90 file does not exist within the .PJNZ, the function will
 silently not return values, even if \code{extract_shiny90 = TRUE}.
 }
 \examples{
-pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 spec <- extract_pjnz_naomi(pjnz)
 
 }

@@ -12,7 +12,7 @@ th_map <- function(){
 #' @param max_level integer specifying the maximum level
 #'
 #' TODO: Make this an example - where is areas.rds?
-#' areas <- readRDS(system.file("extdata/areas/areas.rds", package = "naomi"))
+#' areas <- readRDS(system.file("extdata/areas/areas.rds", package = "naomi.zaf"))
 #' areas_wide <- spread_areas(areas)
 #'
 #' @export

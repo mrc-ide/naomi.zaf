@@ -33,21 +33,21 @@ library(sf)
 #'
 #' Area hierarchy and boundaries
 
-area_merged <- read_sf(system.file("extdata/demo_areas.geojson", package = "naomi"))
+area_merged <- read_sf(system.file("extdata/demo_areas.geojson", package = "naomi.zaf"))
 
 #' Population data
 ##+ load_population_data, message = FALSE
-pop_agesex <- read_csv(system.file("extdata/demo_population_agesex.csv", package = "naomi"))
+pop_agesex <- read_csv(system.file("extdata/demo_population_agesex.csv", package = "naomi.zaf"))
 
 #' Survey data
 ##+ load_survey_data, message = FALSE
-survey_hiv_indicators <- read_csv(system.file("extdata/demo_survey_hiv_indicators.csv", package = "naomi"))
+survey_hiv_indicators <- read_csv(system.file("extdata/demo_survey_hiv_indicators.csv", package = "naomi.zaf"))
 
 #' Programme data
 #'
 ##+ message = FALSE
-art_number <- read_csv(system.file("extdata/demo_art_number.csv", package = "naomi"))
-anc_testing <- read_csv(system.file("extdata/demo_anc_testing.csv", package = "naomi"))
+art_number <- read_csv(system.file("extdata/demo_art_number.csv", package = "naomi.zaf"))
+anc_testing <- read_csv(system.file("extdata/demo_anc_testing.csv", package = "naomi.zaf"))
 
 
 #' Programme data
@@ -55,7 +55,7 @@ anc_testing <- read_csv(system.file("extdata/demo_anc_testing.csv", package = "n
 
 #' Spectrum PJNZ
 
-pjnz <- system.file("extdata/demo_mwi2024_v6.36.pjnz", package = "naomi")
+pjnz <- system.file("extdata/demo_mwi2024_v6.36.pjnz", package = "naomi.zaf")
 spec <- extract_pjnz_naomi(pjnz)
 
 

@@ -17,7 +17,7 @@ number on ART, respectively.
 Extract ART and ANC testing program data inputs from Spectrum PJNZ
 }
 \examples{
-pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi")
+pjnz <- system.file("extdata/demo_mwi2019.PJNZ", package = "naomi.zaf")
 spec <- extract_pjnz_program_data(pjnz)
 
 }

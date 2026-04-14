@@ -196,7 +196,7 @@ build_description <- function(type_text, options) {
   write_options <- function(name, value) {
     sprintf("%s - %s", name, value)
   }
-  lang <- traduire::translator(package = "naomi")$language()
+  lang <- traduire::translator(package = "naomi.zaf")$language()
   labels <- c("OPTIONS_GENERAL_AREA_SCOPE_LABEL",
             "OPTIONS_GENERAL_AREA_LEVEL_LABEL",
             "OPTIONS_GENERAL_CALENDAR_QUARTER_T2_LABEL",
