@@ -67,7 +67,7 @@ if(tolower(tools::file_ext(params$outputs)) %in% c("rds", "qs")) {
 # Read files if zipped output package provided
 if(grepl("\\.zip$", params$outputs)) {
   output_zip <- params$outputs
-  outputs <- naomi::read_output_package(output_zip)
+  outputs <- naomi.zaf::read_output_package(output_zip)
   inputs <- unz(output_zip, "info/inputs.csv") 
   inputs <- utils::read.csv(inputs)
   options <- unz(output_zip, "info/options.yml")
@@ -94,8 +94,8 @@ spectrum_file <- paste0(inputs[inputs$role == "pjnz",]$filename)
 
 
 # Filter data for specific analytics
-indicators <- naomi::add_output_labels(outputs) 
-indicators_geom <- naomi::add_output_labels(outputs, geometry = TRUE)
+indicators <- naomi.zaf::add_output_labels(outputs) 
+indicators_geom <- naomi.zaf::add_output_labels(outputs, geometry = TRUE)
 
 # Identify area_level_label for model estimates
 area_level_map <- outputs$meta_area %>%
@@ -444,7 +444,7 @@ if (print_pt) { cat("### **Distribuição geográfica de PVVIH**") }
 # Map: PLHIV (mean)
 # # By lowest area_level
 #-------------------------------------------------------------------------------
-p1 <- naomi::map_outputs(indicators_geom, 
+p1 <- naomi.zaf::map_outputs(indicators_geom, 
                          indicator = "plhiv",
                          age = "Y015_999", 
                          calendar_quarter = options$calendar_quarter_t2,
@@ -457,7 +457,7 @@ p1 <- naomi::map_outputs(indicators_geom,
 # Map: on ART
 # # By lowest area_level
 #-------------------------------------------------------------------------------
-p2 <- naomi::map_outputs(indicators_geom, 
+p2 <- naomi.zaf::map_outputs(indicators_geom, 
                          indicator = "art_current_residents",
                          age = "Y015_999",                          
                          calendar_quarter = options$calendar_quarter_t2,
@@ -470,7 +470,7 @@ p2 <- naomi::map_outputs(indicators_geom,
 # Map: new infections (mean)
 # # By lowest area_level
 #-------------------------------------------------------------------------------
-p3 <- naomi::map_outputs(indicators_geom, 
+p3 <- naomi.zaf::map_outputs(indicators_geom, 
                          indicator = "infections",
                          age = "Y015_999", 
                          calendar_quarter = options$calendar_quarter_t2,
@@ -499,7 +499,7 @@ if (print_pt) {cat("### **Distribuição geográfica das taxas de infeção pelo
 # Map: Prevalence (mean)
 # # By lowest area_level
 #-------------------------------------------------------------------------------
-p4 <- naomi::map_outputs(indicators_geom, 
+p4 <- naomi.zaf::map_outputs(indicators_geom, 
                          indicator = "prevalence",
                          age = "Y015_049", 
                          sex_disag = "both", 
@@ -513,7 +513,7 @@ p4 <- naomi::map_outputs(indicators_geom,
 # Map: ART coverage (mean)
 # # By lowest area_level
 #-------------------------------------------------------------------------------
-p5 <- naomi::map_outputs(indicators_geom, 
+p5 <- naomi.zaf::map_outputs(indicators_geom, 
                          indicator = "art_coverage",
                          age = "Y015_999", 
                          sex_disag = "both", 
@@ -528,7 +528,7 @@ p5 <- naomi::map_outputs(indicators_geom,
 # Map: Incidence
 # # By lowest area_level
 #-------------------------------------------------------------------------------
-p6 <- naomi::map_outputs(indicators_geom, 
+p6 <- naomi.zaf::map_outputs(indicators_geom, 
                          indicator = "incidence",
                          age = "Y015_049", 
                          sex_disag = "both", 

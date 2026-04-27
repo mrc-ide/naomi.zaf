@@ -628,7 +628,7 @@ naomi_model_frame <- function(area_merged,
                       spec_unaware_untreated_prop_t6 = unaware_untreated_prop,
                       asfr_t6 = asfr,
                       frr_plhiv_t6 = frr_plhiv,
-                      frr_already_art_t6 = frr_already_art                      
+                      frr_already_art_t6 = frr_already_art
                     ),
              by = c("spectrum_region_code", "sex", "age_group")
            )
@@ -764,10 +764,10 @@ naomi_model_frame <- function(area_merged,
              spec_artcov15to49_t5 =
                sum(population_t5 * spec_prev_t5 * spec_artcov_t5 * age15to49) /
                sum(population_t5 * spec_prev_t5 * age15to49),
-             spec_prev15to49_t6 = sum(population_t6 * spec_prev_t6 * age15to49) / sum(population_t6 * age15to49),             
+             spec_prev15to49_t6 = sum(population_t6 * spec_prev_t6 * age15to49) / sum(population_t6 * age15to49),
              spec_artcov15to49_t6 =
                sum(population_t6 * spec_prev_t6 * spec_artcov_t6 * age15to49) /
-               sum(population_t6 * spec_prev_t6 * age15to49),             
+               sum(population_t6 * spec_prev_t6 * age15to49),
              logit_rho_offset = 0,
              logit_alpha_offset = 0,
              logit_alpha_t1t2_offset = qlogis(spec_artcov_t2) - qlogis(spec_artcov_t1),
@@ -786,7 +786,7 @@ naomi_model_frame <- function(area_merged,
              log_lambda_t3_offset = dplyr::if_else(age_group == "Y000_004", -Inf, log_lambda_t3_offset),
              log_lambda_t4_offset = dplyr::if_else(age_group == "Y000_004", -Inf, log_lambda_t4_offset),
              log_lambda_t5_offset = dplyr::if_else(age_group == "Y000_004", -Inf, log_lambda_t5_offset),
-             log_lambda_t6_offset = dplyr::if_else(age_group == "Y000_004", -Inf, log_lambda_t6_offset)             
+             log_lambda_t6_offset = dplyr::if_else(age_group == "Y000_004", -Inf, log_lambda_t6_offset)
            ) %>%
     dplyr::ungroup()
 
@@ -800,7 +800,7 @@ naomi_model_frame <- function(area_merged,
              spec_prev15to49f_t3 = sum(population_t3 * spec_prev_t3 * age15to49 * female_15plus) / sum(population_t3 * age15to49 * female_15plus),
              spec_prev15to49f_t4 = sum(population_t4 * spec_prev_t4 * age15to49 * female_15plus) / sum(population_t4 * age15to49 * female_15plus),
              spec_prev15to49f_t5 = sum(population_t5 * spec_prev_t5 * age15to49 * female_15plus) / sum(population_t5 * age15to49 * female_15plus),
-             spec_prev15to49f_t6 = sum(population_t6 * spec_prev_t6 * age15to49 * female_15plus) / sum(population_t6 * age15to49 * female_15plus),             
+             spec_prev15to49f_t6 = sum(population_t6 * spec_prev_t6 * age15to49 * female_15plus) / sum(population_t6 * age15to49 * female_15plus),
              paed_rho_ratio = is_paed * spec_prev_t1 / spec_prev15to49f_t1,
              bin_rho_model = if(rho_paed_15to49f_ratio) as.integer(!age_group %in% c("Y000_004", "Y005_009", "Y010_014")) else 1.0,
              ##
@@ -810,7 +810,7 @@ naomi_model_frame <- function(area_merged,
              paed_lambda_ratio_t3 = is_paed * spec_incid_t3 / spec_prev15to49f_t3,
              paed_lambda_ratio_t4 = is_paed * spec_incid_t4 / spec_prev15to49f_t4,
              paed_lambda_ratio_t5 = is_paed * spec_incid_t5 / spec_prev15to49f_t5,
-             paed_lambda_ratio_t6 = is_paed * spec_incid_t6 / spec_prev15to49f_t6,             
+             paed_lambda_ratio_t6 = is_paed * spec_incid_t6 / spec_prev15to49f_t6,
              ##
              ## Remove interim calculations
              is_paed = NULL,
@@ -830,7 +830,7 @@ naomi_model_frame <- function(area_merged,
 
   ## ## Foreign ART access model
 
-  ## Thembisa 4.8 applies total population immigrant proportion for 
+  ## Thembisa 4.8 applies total population immigrant proportion for
   ## ages 15+ population and a separate child immigrant proportion
   ## for children age 0-14 years -- see Table B.1 in Thembisa 4.8
   ## ProvincialModel2025.pdf (page 149).
@@ -880,7 +880,7 @@ naomi_model_frame <- function(area_merged,
             Lproj_t2t3 = Lproj_t2t3,
             Lproj_t3t4 = Lproj_t3t4,
             Lproj_t4t5 = Lproj_t4t5,
-            Lproj_t5t6 = Lproj_t5t6,            
+            Lproj_t5t6 = Lproj_t5t6,
             areas = area_merged,
             age_groups = age_groups,
             sexes = sexes,
@@ -928,10 +928,10 @@ naomi_model_frame <- function(area_merged,
 #' @param anc_clients_year_t3_num_monhts Number of months of reporting reflected in the year(s) recorded in `anc_clients_year_t3`.
 #' @param anc_prev_year_t1 Calendar year (possibly multiple) for first time point for ANC prevalence.
 #' @param anc_prev_year_t2 Calendar year (possibly multiple) for second time point for ANC prevalence.
-#' @param anc_prev_year_t3 Calendar year (possibly multiple) for third time point for ANC prevalence.#' 
+#' @param anc_prev_year_t3 Calendar year (possibly multiple) for third time point for ANC prevalence.#'
 #' @param anc_artcov_year_t1 Calendar year (possibly multiple) for first time point for ANC ART coverage.
 #' @param anc_artcov_year_t2 Calendar year (possibly multiple) for second time point for ANC ART coverage.
-#' @param anc_artcov_year_t3 Calendar year (possibly multiple) for third time point for ANC ART coverage.#' 
+#' @param anc_artcov_year_t3 Calendar year (possibly multiple) for third time point for ANC ART coverage.#'
 #' @param deff_prev Approximate design effect for survey prevalence.
 #' @param deff_artcov Approximate design effect for survey ART coverage.
 #' @param deff_recent Approximate design effect for survey proportion recently infected.
@@ -971,7 +971,7 @@ select_naomi_data <- function(
   prev_survey_ids_t2 = NULL,
   artcov_survey_ids_t2 = NULL,
   recent_survey_ids_t2 = NULL,
-  vls_survey_ids_t2 = NULL,  
+  vls_survey_ids_t2 = NULL,
   artnum_calendar_quarter_t1 = naomi_mf[["calendar_quarter1"]],
   artnum_calendar_quarter_t2 = naomi_mf[["calendar_quarter2"]],
   artnum_calendar_quarter_t3 = NULL,
@@ -982,7 +982,7 @@ select_naomi_data <- function(
   anc_prev_year_t3 = year_labels(calendar_quarter_to_quarter_id(naomi_mf[["calendar_quarter3"]])),
   anc_artcov_year_t1 = anc_prev_year_t1,
   anc_artcov_year_t2 = anc_prev_year_t2,
-  anc_artcov_year_t3 = anc_prev_year_t3,  
+  anc_artcov_year_t3 = anc_prev_year_t3,
   use_kish_prev = TRUE,
   deff_prev = 1.0,
   use_kish_artcov = TRUE,
@@ -1010,15 +1010,15 @@ select_naomi_data <- function(
                                      use_kish = use_kish_prev,
                                      deff = deff_prev,
                                      use_aggregate = use_survey_aggregate)
-  
-  
-  ## !!! Commented for model development   
+
+
+  ## !!! Commented for model development
   ## !!! if (nrow(survey_prev_tagged_t1$model_input) == 0) {
   ## !!!  stop("No prevalence survey data found for survey: ",
   ## !!!       paste0(prev_survey_ids_t1, collapse = ", "),
   ## !!!       ". Prevalence data are required for Naomi. Check your selections.")
   ## !!! }
-  
+
   survey_artcov_tagged_t1 <- survey_mf(survey_ids = artcov_survey_ids_t1,
                                    indicator = "art_coverage",
                                    survey_hiv_indicators = survey_hiv_indicators,
@@ -1026,7 +1026,7 @@ select_naomi_data <- function(
                                    use_kish = use_kish_artcov,
                                    deff = deff_artcov,
                                    use_aggregate = use_survey_aggregate)
-  
+
   survey_recent_tagged_t1 <- survey_mf(survey_ids = recent_survey_ids_t1,
                                        indicator = "recent_infected",
                                        survey_hiv_indicators = survey_hiv_indicators,
@@ -1055,7 +1055,7 @@ select_naomi_data <- function(
                                      use_kish = use_kish_prev,
                                      deff = deff_prev,
                                      use_aggregate = use_survey_aggregate)
-  
+
   survey_artcov_tagged_t2 <- survey_mf(survey_ids = artcov_survey_ids_t2,
                                    indicator = "art_coverage",
                                    survey_hiv_indicators = survey_hiv_indicators,
@@ -1063,7 +1063,7 @@ select_naomi_data <- function(
                                    use_kish = use_kish_artcov,
                                    deff = deff_artcov,
                                    use_aggregate = use_survey_aggregate)
-  
+
   survey_recent_tagged_t2 <- survey_mf(survey_ids = recent_survey_ids_t2,
                                        indicator = "recent_infected",
                                        survey_hiv_indicators = survey_hiv_indicators,
@@ -1083,7 +1083,7 @@ select_naomi_data <- function(
                                     deff = deff_vls,
                                     use_aggregate = use_survey_aggregate)
 
-  
+
   # Meta areas
   meta_areas <- naomi_mf$areas %>%
     dplyr::select(area_id, area_level) %>%
@@ -1155,7 +1155,7 @@ select_naomi_data <- function(
   anc_clients_t3_dat <- anc_testing_clients_mf(anc_clients_year_t3, anc_tagged$model_input)
   anc_prev_t3_dat <- anc_testing_prev_mf(anc_prev_year_t3, anc_tagged$model_input)
   anc_artcov_t3_dat <- anc_testing_artcov_mf(anc_artcov_year_t3, anc_tagged$model_input)
-  
+
 
   # Aggregate, interpolate, tag and subset ART inputs according to model option specifications
 
@@ -1187,7 +1187,7 @@ select_naomi_data <- function(
   naomi_mf$anc_clients_t3_dat <- anc_clients_t3_dat
   naomi_mf$anc_prev_t3_dat <- anc_prev_t3_dat
   naomi_mf$anc_artcov_t3_dat <- anc_artcov_t3_dat
-  
+
 
   naomi_mf$artnum_t1_dat <- artnum_t1_dat
   naomi_mf$artnum_t2_dat <- artnum_t2_dat
@@ -1220,7 +1220,7 @@ select_naomi_data <- function(
                        recent_survey_quarters_t2 = unique(surv_df$survey_mid_calendar_quarter[surv_df$survey_id %in% recent_survey_ids_t2]),
                        vls_survey_ids_t2 = vls_survey_ids_t2,
                        vls_survey_quarters_t2 = unique(surv_df$survey_mid_calendar_quarter[surv_df$survey_id %in% vls_survey_ids_t2]),
-                       ## 
+                       ##
                        artnum_calendar_quarter_t1 = artnum_calendar_quarter_t1,
                        artnum_calendar_quarter_t2 = artnum_calendar_quarter_t2,
                        artnum_calendar_quarter_t3 = artnum_calendar_quarter_t3,
@@ -1685,7 +1685,7 @@ artnum_mf <- function(calendar_quarter, art_number, naomi_mf) {
         art_current = integer(0),
         art_current_public = integer(0),
         art_current_medaid = integer(0),
-        art_current_cashpay = integer(0),        
+        art_current_cashpay = integer(0),
         calendar_quarter = character(0),
         source = character(0),
         naomi_input = character(0),

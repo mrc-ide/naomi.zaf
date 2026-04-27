@@ -1,4 +1,4 @@
-library(naomi)
+library(naomi.zaf)
 library(tidyverse)
 library(sf)
 
@@ -16,10 +16,10 @@ extdata_path <- "../../inst/extdata/demo-district28"
 dir.create(extdata_path)
 
 #' Update areas for spectrum region code
-  
+
 areas_district28 <- area_merged %>%
   filter(area_level %in% 0:3)
-                                     
+
 write_sf(areas_district28, file.path(extdata_path, "demo_areas_district28.geojson"))
 
 

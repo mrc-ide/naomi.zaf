@@ -3,7 +3,7 @@ test_that("ART data is properly aggreagted for Spectrum comparison table", {
 
   # Create test data with sex disaggreagted adults on ART
   art <- a_hintr_data$art_number
-  art_dat <- naomi::read_art_number(art)
+  art_dat <- read_art_number(art)
   art_adult_female <- art_dat |> dplyr::filter(age_group == "Y015_999") |>
     dplyr::mutate(sex = "female", art_current = 0.60 * art_current)
   art_adult_male <- art_dat |> dplyr::filter(age_group == "Y015_999") |>
@@ -116,7 +116,7 @@ test_that("art data comparison returns value for only last CQ within each year",
   # but with a different calendar quarter. We should be returning the latest
   # quarter of these
   art <- a_hintr_data$art_number
-  art_dat <- naomi::read_art_number(art)
+  art_dat <- read_art_number(art)
   art_dat_row <- art_dat[art_dat$area_id == "MWI_2_1_demo" &
                                 art_dat$sex == "both" &
                                 art_dat$age_group == "Y000_014" &
