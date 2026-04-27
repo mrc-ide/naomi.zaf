@@ -1,4 +1,4 @@
-## Naomi <img src='images/naomi_hex.png' align="right" height="139" />
+## Naomi -- South Africa Custom Version <img src='images/naomi_hex.png' align="right" height="139" />
 
 [![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
 [![R-CMD-check](https://github.com/mrc-ide/naomi/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/mrc-ide/naomi/actions/workflows/R-CMD-check.yaml)
@@ -6,19 +6,21 @@
 
 Naomi model for subnational HIV estimates
 
+This repository contains a customised version of the Naomi model with additional features for the South Africa district HIV estimates. The version number is suffixed with `X.X.X.999710`, with 710 reflecting the ISO-3 numeric country code for South Africa.
+
 ### Installation
 
 The package is not available from [CRAN](https://cran.r-project.org/).
 Instead, install the compiled version from the mrc-ide universe.
 
 ```
-install.packages("naomi", repos = "https://mrc-ide.r-universe.dev")
+install.packages("naomi.zaf", repos = "https://mrc-ide.r-universe.dev")
 ```
 
 Install from GitHub to install from source.
 ```
 # install.packages("devtools") # Uncomment this line if devtools is not yet installed
-devtools::install_github("mrc-ide/naomi")
+devtools::install_github("mrc-ide/naomi.zaf")
 ```
 
 ### Development steps
