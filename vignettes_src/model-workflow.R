@@ -17,7 +17,7 @@ unlink("outputs", recursive = TRUE)
 #'
 
 ##+ setup, message = FALSE
-library(naomi)
+library(naomi.zaf)
 library(tidyverse)
 library(sf)
 
@@ -164,7 +164,7 @@ naomi_data <- select_naomi_data(
   anc_artcov_year_t1 = anc_art_coverage_year1,
   anc_artcov_year_t2 = anc_art_coverage_year2
 )
- 
+
 
 
 #' 5. Fit model

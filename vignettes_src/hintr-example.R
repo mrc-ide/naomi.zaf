@@ -20,7 +20,7 @@ unlink("outputs", recursive = TRUE)
 
 ##+ setup, message = FALSE
 
-library(naomi)
+library(naomi.zaf)
 
 ##+ fit_model
 hintr_data <- list(

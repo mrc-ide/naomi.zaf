@@ -14,7 +14,7 @@ vignette: >
 
 
 ``` r
-library(naomi)
+library(naomi.zaf)
 library(tidyverse)
 library(sf)
 ```

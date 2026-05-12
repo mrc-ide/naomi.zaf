@@ -1,4 +1,4 @@
-library(naomi)
+library(naomi.zaf)
 library(tidyverse)
 library(sf)
 
@@ -71,12 +71,12 @@ reg_code <- areas_wide %>%
   select(-area_id) %>%
   pivot_longer(c(area_id1, area_id2, area_id3, area_id4), values_to = "area_id") %>%
   distinct(area_id, spectrum_region_code)
-  
+
 areas_region <- area_merged %>%
   select(-spectrum_region_code) %>%
   left_join(reg_code, by = "area_id") %>%
   select(names(area_merged))
-                                     
+
 write_sf(areas_region, "../../inst/extdata/demo-subnational-pjnz/demo_areas_region-pjnz.geojson")
 
 

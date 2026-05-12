@@ -1,4 +1,4 @@
 library(testthat)
-library(naomi)
+library(naomi.zaf)
 
-test_check("naomi")
+test_check("naomi.zaf")

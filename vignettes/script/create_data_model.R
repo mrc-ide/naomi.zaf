@@ -6,13 +6,13 @@ library(ggplot2)
 library(datamodelr)
 library(sf)
 
-area_levels <- naomi::demo_area_levels
-area_hierarchy <- naomi::demo_area_hierarchy
-area_boundaries <- naomi::demo_area_boundaries
+area_levels <- naomi.zaf::demo_area_levels
+area_hierarchy <- naomi.zaf::demo_area_hierarchy
+area_boundaries <- naomi.zaf::demo_area_boundaries
 
 #' population
-population_agesex <- naomi::demo_population_agesex
-age_group_meta <- naomi::get_age_groups()
+population_agesex <- naomi.zaf::demo_population_agesex
+age_group_meta <- naomi.zaf::get_age_groups()
 
 fertility <- data.frame(area_id = character(0),
                         time = numeric(0),
@@ -21,17 +21,17 @@ fertility <- data.frame(area_id = character(0),
                         asfr = numeric(0))
 
 #' surveys
-survey_meta <- naomi::demo_survey_meta
-survey_regions <- naomi::demo_survey_regions
-survey_clusters <- naomi::demo_survey_clusters
-survey_individuals <- naomi::demo_survey_individuals
-survey_biomarker <- naomi::demo_survey_biomarker
+survey_meta <- naomi.zaf::demo_survey_meta
+survey_regions <- naomi.zaf::demo_survey_regions
+survey_clusters <- naomi.zaf::demo_survey_clusters
+survey_individuals <- naomi.zaf::demo_survey_individuals
+survey_biomarker <- naomi.zaf::demo_survey_biomarker
 
-survey_hiv_indicators <- naomi::demo_survey_hiv_indicators
+survey_hiv_indicators <- naomi.zaf::demo_survey_hiv_indicators
 
 #' programme
-art_number <- naomi::demo_art_number
-anc_testing <- naomi::demo_anc_testing
+art_number <- naomi.zaf::demo_art_number
+anc_testing <- naomi.zaf::demo_anc_testing
 
 dm_add_colors(
   dm_color_scheme(

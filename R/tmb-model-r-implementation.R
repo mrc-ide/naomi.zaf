@@ -366,7 +366,7 @@ naomi_objective_function_r <- function(d, p) {
 
   infections_t3 <- lambda_t3 * (d$population_t3 - plhiv_t3)
 
-  
+
   ## likelihood for household survey data
 
   rho_obs_t1 <- as.vector(d$A_prev_t1 %*% plhiv_t1) / as.vector(d$A_prev_t1 %*% d$population_t1)
@@ -521,10 +521,10 @@ naomi_objective_function_r <- function(d, p) {
     cum_nb <- cum_nb + d$n_nb[i]
   }
 
-  immigrant_theta_t1 <- d$recent_migrant_hivprev_15to49 / (d$Z_x %*% rho_15to49_t1)  
+  immigrant_theta_t1 <- d$recent_migrant_hivprev_15to49 / (d$Z_x %*% rho_15to49_t1)
   foreign_art_prop_t1 <- d$foreign_art_eta_t1 * immigrant_theta_t1 * d$recent_immigration_prop
   artnum_foreign_t1 <- artnum_t1 * foreign_art_prop_t1
-  
+
   prop_art_domestic_t1 <- prop_art_t1 * (1.0 - foreign_art_prop_t1)
   prop_art_ij_t1 <- as.vector(d$Xart_idx %*% prop_art_domestic_t1) * as.vector(d$Xart_gamma %*% gamma_art)
   population_ij_t1 <- as.vector(d$Xart_idx %*% d$population_t1)
@@ -546,10 +546,10 @@ naomi_objective_function_r <- function(d, p) {
     cum_nb <- cum_nb + d$n_nb[i]
   }
 
-  immigrant_theta_t2 <- d$recent_migrant_hivprev_15to49 / (d$Z_x %*% rho_15to49_t2)  
+  immigrant_theta_t2 <- d$recent_migrant_hivprev_15to49 / (d$Z_x %*% rho_15to49_t2)
   foreign_art_prop_t2 <- d$foreign_art_eta_t2 * immigrant_theta_t2 * d$recent_immigration_prop
   artnum_foreign_t2 <- artnum_t2 * foreign_art_prop_t2
-  
+
   prop_art_domestic_t2 <- prop_art_t2 * (1.0 - foreign_art_prop_t2)
   prop_art_ij_t2 <- as.vector(d$Xart_idx %*% prop_art_domestic_t2) * as.vector(d$Xart_gamma %*% gamma_art_t2)
   population_ij_t2 <- as.vector(d$Xart_idx %*% d$population_t2)
@@ -574,10 +574,10 @@ naomi_objective_function_r <- function(d, p) {
     cum_nb <- cum_nb + d$n_nb[i]
   }
 
-  immigrant_theta_t3 <- d$recent_migrant_hivprev_15to49 / (d$Z_x %*% rho_15to49_t3)  
+  immigrant_theta_t3 <- d$recent_migrant_hivprev_15to49 / (d$Z_x %*% rho_15to49_t3)
   foreign_art_prop_t3 <- d$foreign_art_eta_t3 * immigrant_theta_t3 * d$recent_immigration_prop
   artnum_foreign_t3 <- artnum_t3 * foreign_art_prop_t3
-  
+
   prop_art_domestic_t3 <- prop_art_t3 * (1.0 - foreign_art_prop_t3)
   prop_art_ij_t3 <- as.vector(d$Xart_idx %*% prop_art_domestic_t3) * as.vector(d$Xart_gamma %*% gamma_art_t3)
   population_ij_t3 <- as.vector(d$Xart_idx %*% d$population_t3)
@@ -720,7 +720,7 @@ naomi_objective_function_r <- function(d, p) {
                     alpha_t2_out                   = alpha_t2_out,
                     artnum_t2_out                  = artnum_t2_out,
                     artnum_foreign_t2_out          = artnum_foreign_t2_out,
-                    artprop_foreign_t2_out          = artprop_foreign_t2_out,                    
+                    artprop_foreign_t2_out          = artprop_foreign_t2_out,
                     artattend_t2_out               = artattend_t2_out,
                     artattend_ij_t2_out            = artattend_ij_t2_out,
                     untreated_plhiv_num_t2_out     = untreated_plhiv_num_t2_out,
@@ -794,7 +794,7 @@ naomi_objective_function_r <- function(d, p) {
                     alpha_t3_out                   = alpha_t3_out,
                     artnum_t3_out                  = artnum_t3_out,
                     artnum_foreign_t3_out          = artnum_foreign_t3_out,
-                    artprop_foreign_t3_out          = artprop_foreign_t3_out,                    
+                    artprop_foreign_t3_out          = artprop_foreign_t3_out,
                     artattend_t3_out               = artattend_t3_out,
                     artattend_ij_t3_out            = artattend_ij_t3_out,
                     untreated_plhiv_num_t3_out     = untreated_plhiv_num_t3_out,
@@ -867,11 +867,11 @@ naomi_objective_function_r <- function(d, p) {
   anc_clients_t4 <- d$population_t4 * exp(d$log_asfr_t4_offset + mu_asfr)
   anc_plhiv_t4 <- anc_clients_t4 * anc_rho_t4
   anc_already_art_t4 <- anc_plhiv_t4 * anc_alpha_t4
-  
-  immigrant_theta_t4 <- d$recent_migrant_hivprev_15to49 / (d$Z_x %*% rho_15to49_t4)  
+
+  immigrant_theta_t4 <- d$recent_migrant_hivprev_15to49 / (d$Z_x %*% rho_15to49_t4)
   foreign_art_prop_t4 <- d$foreign_art_eta_t4 * immigrant_theta_t4 * d$recent_immigration_prop
   artnum_foreign_t4 <- artnum_t4 * foreign_art_prop_t4
-  
+
   prop_art_domestic_t4 <- prop_art_t4 * (1.0 - foreign_art_prop_t4)
   prop_art_ij_t4 <- as.vector(d$Xart_idx %*% prop_art_domestic_t4) * as.vector(d$Xart_gamma %*% gamma_art_t3)  ## Note: using same ART attendance as T2
   population_ij_t4 <- as.vector(d$Xart_idx %*% d$population_t4)
@@ -948,10 +948,10 @@ naomi_objective_function_r <- function(d, p) {
 
   infections_t5 <- lambda_t5 * (d$population_t5 - plhiv_t5)
 
-  immigrant_theta_t5 <- d$recent_migrant_hivprev_15to49 / (d$Z_x %*% rho_15to49_t5)  
+  immigrant_theta_t5 <- d$recent_migrant_hivprev_15to49 / (d$Z_x %*% rho_15to49_t5)
   foreign_art_prop_t5 <- d$foreign_art_eta_t5 * immigrant_theta_t5 * d$recent_immigration_prop
   artnum_foreign_t5 <- artnum_t5 * foreign_art_prop_t5
-  
+
   prop_art_domestic_t5 <- prop_art_t5 * (1.0 - foreign_art_prop_t5)
   prop_art_ij_t5 <- as.vector(d$Xart_idx %*% prop_art_domestic_t5) * as.vector(d$Xart_gamma %*% gamma_art_t3)  ## Note: using same ART attendance as T2
   population_ij_t5 <- as.vector(d$Xart_idx %*% d$population_t5)
@@ -970,7 +970,7 @@ naomi_objective_function_r <- function(d, p) {
                     plhiv_t5_out                   = plhiv_t5_out,
                     plhiv_attend_t5_out            = plhiv_attend_t5_out,
                     infections_t5_out              = infections_t5_out)
-  
+
   report_likelihood <- list(hhs_prev_t1_ll        = hhs_prev_t1_ll,
                             hhs_artcov_t1_ll      = hhs_artcov_t1_ll,
                             hhs_vls_t1_ll         = hhs_vls_t1_ll,
@@ -978,7 +978,7 @@ naomi_objective_function_r <- function(d, p) {
                             hhs_prev_t2_ll        = hhs_prev_t2_ll,
                             hhs_artcov_t2_ll      = hhs_artcov_t2_ll,
                             hhs_vls_t2_ll         = hhs_vls_t2_ll,
-                            hhs_recent_t2_ll      = hhs_recent_t2_ll,                            
+                            hhs_recent_t2_ll      = hhs_recent_t2_ll,
                             artnum_t2_ll          = artnum_t2_ll,
                             artnum_t1_ll          = artnum_t1_ll,
                             anc_rho_obs_t1_ll     = anc_rho_obs_t1_ll,
@@ -1012,7 +1012,7 @@ naomi_objective_function_r <- function(d, p) {
 #' @param u vector of spatial component of random effect.
 #' @param sigma marginal standard deviation (>0).
 #' @param phi proportion of marginal variance explained by spatial structured
-#'            component u (phi \in [0, 1]).
+#'            component u (phi in \[0, 1\]).
 #' @param Q scaled structure matrix for spatial component.
 #'
 #' @return Log probability density of x and u.
