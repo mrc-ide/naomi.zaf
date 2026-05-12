@@ -732,7 +732,7 @@ make_tmb_obj <- function(data, par, calc_outputs = 1L, inner_verbose = FALSE,
 
   obj <- TMB::MakeADFun(data = data,
                         parameters = par,
-                        DLL = "naomi",
+                        DLL = "naomi.zaf",
                         silent = !inner_verbose,
                         map = list(
                           log_foreign_art_eta_scalar = factor(NA)

@@ -135,7 +135,7 @@ run_model <- function(data, options, validate) {
 build_hintr_output <- function(plot_data_path, model_output_path, warnings) {
   out <- list(plot_data_path = plot_data_path,
               model_output_path = model_output_path,
-              version = utils::packageVersion("naomi"),
+              version = utils::packageVersion("naomi.zaf"),
               warnings = warnings)
   class(out) <- "hintr_output"
   out
